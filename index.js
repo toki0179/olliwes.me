@@ -19,6 +19,10 @@ app.get('/about', (req, res) => {
     res.render('about', { title: 'About' })
 })
 
+app.get('/contact', (req, res) => {
+    res.render('contact', { title: 'Contact' })
+})
+
 app.use((req, res, next) => {
     res.status(404).send("<h1>404, page not found !</h1>");
 });

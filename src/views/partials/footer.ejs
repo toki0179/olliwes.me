@@ -12,6 +12,22 @@
         return allEmojis[Math.floor(Math.random() * allEmojis.length)];
     }
 
+    document.getElementById('copyEmailText').onclick=function() {
+        var myAlert = document.getElementById('CopiedTextToast');
+        var bsAlert = new bootstrap.Toast(myAlert);
+        bsAlert.show();
+    }
+
+    function copyEmail() {
+        /* Get the text field */
+        var copyText = "hello@olliwes.me";
+
+        navigator.clipboard.writeText(copyText);
+
+        /* Alert the copied text */
+        $('.kewl').toast('show')
+    } 
+
     document.getElementById("emojis").innerHTML = `Backend Developer | ${getRandomEmoji()}${getRandomEmoji()}${getRandomEmoji()}`;
 </script>
 
