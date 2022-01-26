@@ -12,14 +12,24 @@
         return allEmojis[Math.floor(Math.random() * allEmojis.length)];
     }
 
+    anime({
+        targets: '#olliwes path',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutSine',
+        duration: 1500,
+        delay: function(el, i) { return i * 250 },
+        direction: 'alternate',
+        loop: false
+});
+
     document.getElementById("emojis").innerHTML = `Backend Developer | ${getRandomEmoji()}${getRandomEmoji()}${getRandomEmoji()}`;
 </script>
 
-<footer class="page-footer fixed-bottom font-small bg-dark text-white">
+<div class="page-footer fixed-bottom font-small bg-dark text-white">
     <div class="footer-copyright text-center py-3">
         <p class="text-muted">loaded in <span id="time"></span> seconds</p>
     </div>
-</footer>
+</div>
 
 </body>
 </html>
