@@ -1,7 +1,7 @@
 <%- include('partials/header') -%>
 <%- include('partials/navbar') -%>
 
-<div id="CopiedTextToast" class="toast align-items-center text-white bg-success m-auto  border-0" role="alert" aria-live="assertive" aria-atomic="true">
+<div id="CopiedTextToast" class="toast align-items-center text-white bg-success m-auto border-0" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="d-flex">
     <div class="toast-body">
       Copied to clipboard!
@@ -22,5 +22,20 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.getElementById('copyEmailText').onclick=function() {
+        var myAlert = document.getElementById('CopiedTextToast');
+        var bsAlert = new bootstrap.Toast(myAlert);
+        bsAlert.show();
+    }
+
+    function copyEmail() {
+        /* Get the text field */
+        var copyText = "hello@olliwes.me";
+
+        navigator.clipboard.writeText(copyText);
+    } 
+</script>
 
 <%- include('partials/footer') -%>
