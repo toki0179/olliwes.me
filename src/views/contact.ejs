@@ -14,7 +14,7 @@
   <h1>Say Hello!</h1>
   <div class="mt-4 card bg-dark neon-border" style="width: 18rem;">
     <div class="card-body">
-      <h5 id="email" class="card-title">hello@olliwes.me</h5>
+      <h5 id="myEmail" class="card-title">hello@olliwes.me</h5>
       <h6 class="mt-2 card-subtitle mb-2 text-muted">Hey there, shoot me an email</h6>
       <a href="#">
         <span id="copyEmailText" onclick="copyEmail()" class="badge bg-secondary">Click To Copy</span>
@@ -25,17 +25,14 @@
 
 <script>
   document.getElementById('copyEmailText').onclick=function() {
+        var copyText = "hello@olliwes.me";
+
+        navigator.clipboard.writeText(copyText);
+
         var myAlert = document.getElementById('CopiedTextToast');
         var bsAlert = new bootstrap.Toast(myAlert);
         bsAlert.show();
     }
-
-    function copyEmail() {
-        /* Get the text field */
-        var copyText = "hello@olliwes.me";
-
-        navigator.clipboard.writeText(copyText);
-    } 
 </script>
 
 <%- include('partials/footer') -%>

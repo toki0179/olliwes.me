@@ -5,14 +5,6 @@
         var milliseconds = time % 1000;
         document.getElementById("time").innerHTML = seconds + "." + milliseconds;
     }
-
-    const allEmojis = ["😀","😁","😂","😃","😄","😅","😆","😇","😈","👿","😉","😊","☺️","😋","😌","😍","😎","😏","😐","😑","😒","😓","😔","😕","😖","😗","😘","😙","😚","😛","😜","😝","😞","😟","😠","😡","😢","😣","😤","😥","😦","😧","😨","😩","😪","😫","😬","😭","😮","😯","😰","😱","😲","😳","😴","😵","😶","😷","😸","😹","😺","😻","😼","😽","😾","😿","🙀"]
-    
-    function getRandomEmoji() {
-        return allEmojis[Math.floor(Math.random() * allEmojis.length)];
-    }
-
-    document.getElementById("emojis").innerHTML = `Backend Developer | ${getRandomEmoji()}${getRandomEmoji()}${getRandomEmoji()}`;
 </script>
 
 <footer class="page-footer font-small bg-dark text-white">
