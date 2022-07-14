@@ -1,7 +1,14 @@
 const express = require('express')
 const app = express()
 const path = require("path");
+const sys = require('sys')
+const exec = require('child_process').exec 
 const port = 3000
+
+const ping = async (host) => {
+   const {stdout, stderr} = await exec(`ping -c 5 ${host}`);
+   return stdout, stderr
+}
 
 app.use(express.static(__dirname + '/public'))
 
@@ -23,6 +30,15 @@ app.get('/about', (req, res) => {
 
 app.get('/contact', (req, res) => {
     res.render('contact', { title: 'Contact' })
+})
+
+app.post('/api/online', (req, res) => {
+   var { stdout, stderr } = ping('pc.olliwes.me');
+   if (stderr) {
+      return res.send("OFF")
+   } else {
+      return res.send("ALIVE")
+   }
 })
 
 app.use((req, res, next) => {
